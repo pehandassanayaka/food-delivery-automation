@@ -1,6 +1,6 @@
 package pages;
 
-import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 import factory.PageBase;
@@ -18,8 +18,8 @@ import utils.SeleniumUtils;
 public class GoogleHomePage extends PageBase {
 	private WebDriver driver;
 	
-	private String contactName = "//input[@name='name']";
-	private String btnSearch = "//input[@name='btnK']";
+	private String txtSearch = "//textarea[@name='q']";
+	private String btnSearch = "//div[@class='FPdoLc lJ9FBc']//center//input[@name='btnK']";
 
 	/**
 	 * Constructor of the page. Initialize the Page Factory objects. 
@@ -37,18 +37,9 @@ public class GoogleHomePage extends PageBase {
 	 * @param query
 	 */
 	public GoogleResultsPage searchFor(String query) {
-		SeleniumUtils.waitForElement(driver, txtSearch).sendKeys(query);
-		SeleniumUtils.waitForElementToBeClickable(driver, btnSearch).click();
-		
+		WebElement searchBox = SeleniumUtils.waitForElement(driver, txtSearch);
+		searchBox.sendKeys(query);
+		searchBox.sendKeys(Keys.ENTER); // Press Enter instead of clicking the button
 		return new GoogleResultsPage(driver);
 	}
-
-
-	public void enterContactName(String nameValue) {
-		WebElement nameField = driver.findElement(By.xpath(contactName));
-		nameField.click();
-		nameField.clear(); // Optional: Clear any pre-filled text
-		nameField.sendKeys(nameValue);
-	}
-
 }
