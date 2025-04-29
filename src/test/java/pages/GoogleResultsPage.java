@@ -18,11 +18,11 @@ import utils.SeleniumUtils;
  */
 public class GoogleResultsPage extends PageBase {
 	private WebDriver driver;
-	
-	private String txtSearch = "//input[@name='q']";
+
+	private String txtSearch = "//textarea[@name='q']";
 	private String btnSearch = "//input[@jsname='Tg7LZd']";
 	private String divResults = "//div[contains(@class, 'rc')]";
-	private String linkResult = ".//div[contains(@class, 'r')]/a[1]";
+	private String linkResult = "//h3[@class='LC20lb MBeuO DKV0Md' and text()='Selenium with Java Tutorial']";
 
 	/**
 	 * Constructor of the page. Initialize the Page Factory objects.
