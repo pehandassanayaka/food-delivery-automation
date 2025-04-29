@@ -3,7 +3,6 @@ package pages;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
-import factory.PageBase;
 import org.openqa.selenium.WebElement;
 import utils.SeleniumUtils;
 
