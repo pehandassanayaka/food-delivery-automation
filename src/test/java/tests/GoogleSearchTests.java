@@ -21,5 +21,6 @@ public class GoogleSearchTests extends BaseTest {
 		// Validate results
 		assertTrue(googleResultsPage.getTitle().equals("Selenium with java - Google Search"));
 		assertTrue(googleResultsPage.isResultPresent("Selenium with Java Tutorial"));
+		
 	}
 }
