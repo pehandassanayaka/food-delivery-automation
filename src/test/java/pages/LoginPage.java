@@ -42,4 +42,13 @@ public class LoginPage extends PageBase {
 		logger.info("Clicked on Login Now button.");
 		logger.info(ENDED + getCurrentMethodName());
 	}
+
+	public void loginWithCredentials(String email, String password) {
+		logger.info(STARTED + getCurrentMethodName());
+		enterEmail(email);
+		enterPassword(password);
+		clickLoginNowButton();
+		logger.info("Performed login with email and password.");
+		logger.info(ENDED + getCurrentMethodName());
+	}
 }
