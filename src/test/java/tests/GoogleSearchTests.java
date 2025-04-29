@@ -9,7 +9,7 @@ import pages.GoogleResultsPage;
 public class GoogleSearchTests extends BaseTest {
 
 	@Test
-	public void googleSearchTest() {
+	public void googleSearchTest() throws InterruptedException {
 		driver.get("http://www.google.com");
 
 		// Initialize the Google Home Page
@@ -17,6 +17,7 @@ public class GoogleSearchTests extends BaseTest {
 
 		// Perform search using Enter key
 		GoogleResultsPage googleResultsPage = googleHomePage.searchFor("Selenium with java");
+		Thread.sleep(10000);
 
 		// Validate results
 		assertTrue(googleResultsPage.getTitle().equals("Selenium with java - Google Search"));
