@@ -14,6 +14,7 @@ public class LoginPage extends PageBase {
 	private String inputPassword = "//input[@type='password' and @name='pass']";
 	private String btnLoginNow = "//input[@type='submit' and @value='login now']";
 
+
 	public LoginPage(WebDriver driver) {
 		super(driver);
 		this.driver = driver;
