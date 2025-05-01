@@ -2,6 +2,7 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -14,6 +15,9 @@ public class HomePage extends PageBase {
 	private String linkLogin = "//a[@href='login.php']";
 	private String linkUserContact = "//a[@href='contact.php']";
 	private String linkRegisterNow = "//a[@href='register.php']";
+	private String linkOrders = "//nav[@class='navbar']/a[text()='orders']";
+	private String menuLink = "//nav[@class='navbar']/a[text()='menu']";
+	private String adminPortalLink = "//nav[@class='navbar']/a[text()='admin portal']";
 
 	public HomePage(WebDriver driver) {
 		super(driver);
@@ -38,7 +42,6 @@ public class HomePage extends PageBase {
 		logger.info("Clicked on Login link.");
 		logger.info(ENDED + getCurrentMethodName());
 	}
-
 
 	public void clickUserContactLink() {
 		logger.info(STARTED + getCurrentMethodName());
@@ -82,5 +85,42 @@ public class HomePage extends PageBase {
 		logger.info(ENDED + getCurrentMethodName());
 	}
 
+	public void clickOrdersLink() {
+		logger.info(STARTED + getCurrentMethodName());
 
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("img[src='images/loader.gif']")));
+		WebElement ordersLink = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(linkOrders)));
+		ordersLink.click();
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("img[src='images/loader.gif']")));
+		logger.info("Clicked on 'Orders' link.");
+		logger.info(ENDED + getCurrentMethodName());
+	}
+
+	public void clickMenuLink() {
+		logger.info(STARTED + getCurrentMethodName());
+
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("img[src='images/loader.gif']")));
+		WebElement menuElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(menuLink)));
+		menuElement.click();
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("img[src='images/loader.gif']")));
+		logger.info("Clicked on Menu link.");
+		logger.info(ENDED + getCurrentMethodName());
+	}
+
+	public void clickAdminPortalLink() {
+		logger.info(STARTED + getCurrentMethodName());
+
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("img[src='images/loader.gif']")));
+
+		WebElement adminPortalElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(adminPortalLink)));
+		adminPortalElement.click();
+
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("img[src='images/loader.gif']")));
+
+		logger.info("Clicked on Admin Portal link.");
+		logger.info(ENDED + getCurrentMethodName());
+	}
 }
