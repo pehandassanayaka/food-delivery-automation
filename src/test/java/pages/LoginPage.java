@@ -11,6 +11,7 @@ public class LoginPage extends PageBase {
 	private String inputEmail = "//input[@type='email' and @name='email']";
 	private String inputPassword = "//input[@type='password' and @name='pass']";
 	private String btnLoginNow = "//input[@type='submit' and @value='login now']";
+	HomePage homePage = new HomePage(driver);
 
 	public LoginPage(WebDriver driver) {
 		super(driver);
@@ -44,6 +45,8 @@ public class LoginPage extends PageBase {
 
 	public void loginWithCredentials(String email, String password) {
 		logger.info(STARTED + getCurrentMethodName());
+		homePage.clickUserButton();
+		homePage.clickLoginLink();
 		enterEmail(email);
 		enterPassword(password);
 		clickLoginNowButton();

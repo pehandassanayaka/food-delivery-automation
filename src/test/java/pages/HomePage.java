@@ -15,6 +15,7 @@ public class HomePage extends PageBase {
 	private String linkLogin = "//a[@href='login.php']";
 	private String linkOrders = "//nav[@class='navbar']/a[text()='orders']";
 	private String menuLink = "//nav[@class='navbar']/a[text()='menu']";
+	private String adminPortalLink = "//nav[@class='navbar']/a[text()='admin portal']";
 
 	public HomePage(WebDriver driver) {
 		super(driver);
@@ -64,4 +65,18 @@ public class HomePage extends PageBase {
 		logger.info(ENDED + getCurrentMethodName());
 	}
 
+	public void clickAdminPortalLink() {
+		logger.info(STARTED + getCurrentMethodName());
+
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("img[src='images/loader.gif']")));
+
+		WebElement adminPortalElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(adminPortalLink)));
+		adminPortalElement.click();
+
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("img[src='images/loader.gif']")));
+
+		logger.info("Clicked on Admin Portal link.");
+		logger.info(ENDED + getCurrentMethodName());
+	}
 }
