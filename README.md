@@ -127,24 +127,24 @@ mvn clean test
       <a href="https://linkedin.com/in/your-profile">LinkedIn</a>
     </td>
     <td align="center">
-      <img src="https://github.com/janedoe.png" width="100px;" alt="Jane Doe"/><br />
+      <img src="https://github.com/Nethmini08.png" width="100px;" alt="Jane Doe"/><br />
       <b>Nethmini Senarathna</b> <br/>
-      📧 jane.doe@email.com <br/>
-      <a href="https://github.com/janedoe">GitHub</a> • 
+      📧 nethminisenarathna@gmail.com <br/>
+      <a href="https://github.com/Nethmini08">GitHub</a> • 
       <a href="https://linkedin.com/in/janedoe">LinkedIn</a>
     </td>
     <td align="center">
-      <img src="https://github.com/johnsmith.png" width="100px;" alt="John Smith"/><br />
+      <img src="https://github.com/Navindya99.png" width="100px;" alt="John Smith"/><br />
       <b>Navindya Jayathilake</b> <br/>
-      📧 john.smith@email.com <br/>
-      <a href="https://github.com/johnsmith">GitHub</a> • 
+      📧 vindy.jay@gmail.com <br/>
+      <a href="https://github.com/Navindya99">GitHub</a> • 
       <a href="https://linkedin.com/in/johnsmith">LinkedIn</a>
     </td>
     <td align="center">
-      <img src="https://github.com/johnsmith.png" width="100px;" alt="Alex Johnson"/><br />
+      <img src="https://github.com/PrajilaShehaniGit.png" width="100px;" alt="Alex Johnson"/><br />
       <b>Prajila Shehani</b> <br/>
-      📧 alex.j@email.com <br/>
-      <a href="https://github.com/alexjohnson">GitHub</a> • 
+      📧 prajila.s@gmail.com <br/>
+      <a href="https://github.com/PrajilaShehaniGit">GitHub</a> • 
       <a href="https://linkedin.com/in/alexjohnson">LinkedIn</a>
     </td>
   </tr>
