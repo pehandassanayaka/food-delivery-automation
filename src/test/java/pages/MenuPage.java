@@ -8,6 +8,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MenuPage extends PageBase {
 	private String messageBox = "//div[@class='message']";
@@ -72,5 +74,21 @@ public class MenuPage extends PageBase {
 
 		logger.info("Closed the message popup.");
 		logger.info(ENDED + getCurrentMethodName());
+	}
+
+	public List<String> getAllMenuItemNames() {
+		logger.info(STARTED + getCurrentMethodName());
+
+		List<WebElement> nameElements = driver.findElements(By.cssSelector("form .name"));
+		List<String> menuItemNames = new ArrayList<>();
+
+		for (WebElement nameElement : nameElements) {
+			String name = nameElement.getText().trim();
+			menuItemNames.add(name);
+			logger.info("Found menu item: " + name);
+		}
+
+		logger.info(ENDED + getCurrentMethodName());
+		return menuItemNames;
 	}
 }
