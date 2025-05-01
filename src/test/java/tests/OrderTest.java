@@ -18,8 +18,6 @@ public class OrderTest extends BaseTest {
 		CheckoutPage checkoutPage = new CheckoutPage(driver);
 		OrdersPage ordersPage = new OrdersPage(driver);
 
-		homePage.clickUserButton();
-		homePage.clickLoginLink();
 		loginPage.loginWithCredentials("pehan@pehan.com", "pehan");
 
 		homePage.clickMenuLink();
