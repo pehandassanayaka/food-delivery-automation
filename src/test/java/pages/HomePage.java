@@ -2,6 +2,7 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -12,6 +13,8 @@ public class HomePage extends PageBase {
 
 	private String btnUser = "//div[@id='user-btn']";
 	private String linkLogin = "//a[@href='login.php']";
+	private String linkOrders = "//nav[@class='navbar']/a[text()='orders']";
+	private String menuLink = "//nav[@class='navbar']/a[text()='menu']";
 
 	public HomePage(WebDriver driver) {
 		super(driver);
@@ -36,4 +39,29 @@ public class HomePage extends PageBase {
 		logger.info("Clicked on Login link.");
 		logger.info(ENDED + getCurrentMethodName());
 	}
+
+	public void clickOrdersLink() {
+		logger.info(STARTED + getCurrentMethodName());
+
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("img[src='images/loader.gif']")));
+		WebElement ordersLink = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(linkOrders)));
+		ordersLink.click();
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("img[src='images/loader.gif']")));
+		logger.info("Clicked on 'Orders' link.");
+		logger.info(ENDED + getCurrentMethodName());
+	}
+
+	public void clickMenuLink() {
+		logger.info(STARTED + getCurrentMethodName());
+
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("img[src='images/loader.gif']")));
+		WebElement menuElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(menuLink)));
+		menuElement.click();
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("img[src='images/loader.gif']")));
+		logger.info("Clicked on Menu link.");
+		logger.info(ENDED + getCurrentMethodName());
+	}
+
 }
