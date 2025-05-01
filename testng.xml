@@ -2,7 +2,7 @@
 <suite name="MyTestSuite">
 	<test name="TestGroup1">
 		<classes>
-			<class name="tests.GoogleSearchTests"/>
+			<class name="tests.LoginTest"/>
 		</classes>
 	</test>
 </suite>
