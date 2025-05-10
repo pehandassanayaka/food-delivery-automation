@@ -14,7 +14,7 @@ public class AdminOrderTest extends BaseTest {
 		AdminDashboardPage adminDashboardPage = new AdminDashboardPage(driver);
 		AdminOrdersPage adminOrdersPage = new AdminOrdersPage(driver);
 
-		adminLoginPage.loginAsAdmin("pehan", "pehan");
+		adminLoginPage.loginAsAdmin("admin", "admin");
 		adminDashboardPage.clickOrdersLink();
 
 		assertEquals(adminOrdersPage.getUserId(), "1", "User ID mismatch!");

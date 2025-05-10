@@ -17,6 +17,10 @@ public class AdminDashboardPage extends PageBase {
 	private String linkAdmins = "//nav[@class='navbar']/a[text()='admins']";
 	private String linkUsers = "//nav[@class='navbar']/a[text()='users']";
 	private String linkMessages = "//nav[@class='navbar']/a[text()='messages']";
+	private String linkadminproducts = "//nav[@class='navbar']/a[text()='products']";
+
+	//nav[@class='navbar']/a[text()='product']
+
 
 	public AdminDashboardPage(WebDriver driver) {
 		super(driver);
@@ -88,4 +92,25 @@ public class AdminDashboardPage extends PageBase {
 		logger.info("Clicked on Messages link.");
 		logger.info(ENDED + getCurrentMethodName());
 	}
+
+
+		public void clickadminProductsLink() {
+			logger.info(STARTED + getCurrentMethodName());
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+			// Wait for loader to disappear
+			wait.until(ExpectedConditions.invisibilityOfElementLocated(
+					By.cssSelector("img[src='images/loader.gif']")));
+
+			// Wait until the register link is clickable
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(linkadminproducts)));
+
+			// Scroll into view to avoid interception by overlays
+			((org.openqa.selenium.JavascriptExecutor) driver)
+					.executeScript("arguments[0].scrollIntoView(true);", driver.findElement(By.xpath(linkadminproducts)));
+
+			driver.findElement(By.xpath(linkadminproducts)).click();
+			logger.info("Clicked on Register link.");
+			logger.info(ENDED + getCurrentMethodName());
+		}
 }
